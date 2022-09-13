@@ -34,6 +34,7 @@ services:
   whoami:
     # A container that exposes an API to show its IP address
     image: containous/whoami
+    container_name: whoami
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
@@ -42,6 +43,7 @@ services:
   app-nginx:
     # A container that exposes an API to show its IP address
     image: nginx:latest
+    container_name: nginx
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.app-nginx.rule=Host(`app-nginx.localhost`)"
