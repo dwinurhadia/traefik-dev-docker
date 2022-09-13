@@ -29,3 +29,9 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
       # - "traefik.http.routers.whoami.entrypoints=web"
       # - traefik.http.services.<service_name>.loadbalancer.server.port 
+  app-nginx:
+    # A container that exposes an API to show its IP address
+    image: nginx:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app-nginx.rule=Host(`app-nginx.localhost`)"
