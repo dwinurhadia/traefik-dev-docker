@@ -1,6 +1,6 @@
 # testing
 curl -H Host:whoami.docker.localhost http://127.0.0.1
 
-# scale
+# scale docker
 docker-compose up -d --scale whoami=1
 
